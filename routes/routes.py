@@ -3,7 +3,7 @@ from db import db_session
 
 
 blueprint = flask.Blueprint(
-    'pred_prof_routes',
+    'preprof_routes',
     __name__,
     template_folder='templates'
 )
@@ -11,4 +11,4 @@ blueprint = flask.Blueprint(
 
 @blueprint.route('/', methods=['GET'])
 def home_page():
-    pass
+    return "aboba"

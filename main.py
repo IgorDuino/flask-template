@@ -1,10 +1,11 @@
 from flask import Flask
 from db import db_session
 from routes import routes
+from settings import settings
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret_key'
+app.config['SECRET_KEY'] = settings.SECRET_KEY
 
 
 def init():

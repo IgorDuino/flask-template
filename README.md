@@ -1,1 +1,1 @@
-# fastapi_jinja_tortoise_template
+# Flask SQLAlchemy шаблон

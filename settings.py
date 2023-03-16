@@ -9,13 +9,7 @@ class Settings:
 
     DEBUG = config("DEBUG", cast=bool, default=False)
 
-    DB_USER = config("DB_USER")
-    DB_NAME = config("DB_NAME")
-    DB_PASS = config("DB_PASS")
-    DB_HOST = config("DB_HOST")
-    DB_PORT = config("DB_PORT")
-
-    DB_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    DB_URL = "sqlite:///data/database.db"
 
     SECRET_KEY = config(
         "SECRET_KEY",

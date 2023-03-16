@@ -5,8 +5,8 @@ from sqlalchemy.dialects.postgresql import UUID
 
 
 class User(SqlAlchemyBase):
-    __tablename__ = 'users'
-    
+    __tablename__ = "users"
+
     uuid = sqlalchemy.Column(UUID(as_uuid=True), unique=True, primary_key=True)
     username = sqlalchemy.Column(sqlalchemy.String)
     email = sqlalchemy.Column(sqlalchemy.String)

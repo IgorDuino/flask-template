@@ -5,8 +5,6 @@ import random
 
 
 class Settings:
-    SERVER_HOST = "localhost"
-
     DEBUG = config("DEBUG", cast=bool, default=False)
 
     DB_URL = "sqlite:///data/database.db"
@@ -15,10 +13,6 @@ class Settings:
         "SECRET_KEY",
         default="".join([random.choice(string.ascii_letters) for _ in range(32)]),
     )
-    JWT_ALGORITHM = "HS25"
-    JWT_ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 day
-
-    LOGIN_URL = SERVER_HOST + "/login"
 
 
 settings = Settings()

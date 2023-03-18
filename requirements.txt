@@ -1,5 +1,7 @@
 flask
 flask-wtf
+flask_login
+flask_sqlalchemy
 gunicorn
 python-decouple
 sqlalchemy

@@ -1,14 +1,11 @@
-import sqlalchemy
-from db.db_session import SqlAlchemyBase
-from sqlalchemy.orm import relationship, backref
-from sqlalchemy.dialects.postgresql import UUID
+from flask_sqlalchemy import SQLAlchemy
 
 
-class User(SqlAlchemyBase):
-    __tablename__ = 'users'
-    
-    uuid = sqlalchemy.Column(UUID(as_uuid=True), unique=True, primary_key=True)
-    username = sqlalchemy.Column(sqlalchemy.String)
-    email = sqlalchemy.Column(sqlalchemy.String)
-    password_hash = sqlalchemy.Column(sqlalchemy.String)
+class User(db.Model):
+    __tablename__ = "users"
+
+    uuid = db.Column(db.UUID(as_uuid=True), unique=True, primary_key=True)
+    username = db.Column(db.String)
+    email = db.Column(db.String)
+    password_hash = db.Column(db.String)
     # children = relationship('ChildrenClass', back_populates='parent', foreign_keys='Children.uuid', cascade="all")

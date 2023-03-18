@@ -7,9 +7,9 @@ from db import db_session
 app = Flask(__name__)
 
 
-def main():
-    db_session.global_init()
-    app.run(port=8080, host="0.0.0.0")
+def init():
+    db_session.global_init()    # Подключение к БД
+    app.register_blueprint(routes.blueprint)
 
 
 if __name__ == "__main__":

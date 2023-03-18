@@ -1,4 +1,5 @@
 flask
-Flask-SQLAlchemy
 gunicorn
 python-decouple
+sqlalchemy
+gunicorn

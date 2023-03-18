@@ -16,6 +16,7 @@ def global_init():
     if __factory:
         return
 
+
     db_engine = os.getenv("DB_ENGINE", "sqlite")
     if db_engine == "postgresql":
         db_connection = f"postgresql://{os.getenv('POSTGRESQL_USERNAME')}:{os.getenv('POSTGRESQL_PASSWORD')}@{os.getenv('POSTGRESQL_HOST')}:{os.getenv('POSTGRESQL_PORT')}/{os.getenv('POSTGRESQL_DB_NAME')}"
@@ -26,6 +27,7 @@ def global_init():
         raise Exception("Неподдерживаемый тип базы данных.")
 
     print(f"Подключение к базе данных по адресу {db_connection}")
+
 
     engine = sa.create_engine(db_connection, echo=False)
     __factory = orm.sessionmaker(bind=engine)

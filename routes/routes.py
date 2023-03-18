@@ -7,3 +7,4 @@ blueprint = flask.Blueprint("preprof_routes", __name__, template_folder="templat
 @blueprint.route("/", methods=["GET"])
 def home_page():
     return "aboba"
+

@@ -8,9 +8,8 @@ app.config['SECRET_KEY'] = 'secret_key'
 
 
 def init():
-    db_session.global_init("")    # Подключение к БД
+    db_session.global_init()    # Подключение к БД
     app.register_blueprint(routes.blueprint)
-    app.run(port=8080, host='0.0.0.0')  # Запуск сервера
 
 init()
 

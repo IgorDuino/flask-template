@@ -11,4 +11,4 @@ blueprint = flask.Blueprint(
 
 @blueprint.route('/', methods=['GET'])
 def home_page():
-    pass
+    return 'aboba'

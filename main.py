@@ -8,8 +8,11 @@ app = Flask(__name__)
 
 
 def init():
-    db_session.global_init()    # Подключение к БД
+    db_session.global_init()  # Подключение к БД
     app.register_blueprint(routes.blueprint)
 
 
 init()
+
+if __name__ == "__main__":
+    app.run()

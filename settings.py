@@ -19,6 +19,7 @@ class Settings:
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 day
 
     LOGIN_URL = SERVER_HOST + "/login"
+    SQLITE_DIR = config("SQLITE_DIR", cast=str, default="data/database.db")
 
 
 settings = Settings()

@@ -1,5 +1,7 @@
 flask
+flask-wtf
 gunicorn
 python-decouple
 sqlalchemy
 gunicorn
+uuid

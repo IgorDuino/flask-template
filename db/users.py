@@ -1,4 +1,5 @@
-import sqlalchemy
+import uuid
+import sqlalchemy as sa
 from db.db_session import SqlAlchemyBase
 from sqlalchemy.orm import relationship, backref
 
@@ -6,8 +7,13 @@ from sqlalchemy.orm import relationship, backref
 class User(SqlAlchemyBase):
     __tablename__ = "users"
 
-    uuid = sqlalchemy.Column(sqlalchemy.UUID(as_uuid=True), unique=True, primary_key=True)
-    username = sqlalchemy.Column(sqlalchemy.String)
-    email = sqlalchemy.Column(sqlalchemy.String)
-    password_hash = sqlalchemy.Column(sqlalchemy.String)
+    uuid = sa.Column(
+        sa.Text(length=36),
+        default=lambda: str(uuid.uuid4()),
+        primary_key=True,
+        unique=True,
+    )
+    username = sa.Column(sa.String)
+    email = sa.Column(sa.String)
+    password_hash = sa.Column(sa.String)
     # children = relationship('ChildrenClass', back_populates='parent', foreign_keys='Children.uuid', cascade="all")

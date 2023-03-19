@@ -7,7 +7,7 @@ import random
 class Settings:
     DEBUG = config("DEBUG", cast=bool, default=False)
 
-    DB_URL = "sqlite:///data/database.db"
+    DB_URL = "sqlite:///database.db"
 
     SECRET_KEY = config(
         "SECRET_KEY",
